@@ -1,0 +1,40 @@
+/* Styles for cards */
+.card {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+/* Styles for card titles */
+.card-title {
+    font-size: 1.25rem;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+}
+
+/* Styles for card body */
+.card-body {
+    padding: 1.25rem;
+}
+
+/* Styles for card text */
+.card-text {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Styles for offer buttons */
+.card .btn-primary {
+    margin-top: 10px;
+}
+
+.solid-line{
+    border-top: 2px solid green;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

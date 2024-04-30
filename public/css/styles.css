@@ -1,0 +1,234 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+main {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.nav-bar, .nav-link{
+    color: white;
+}
+
+.nav-bar, .nav-link:hover{
+    color: black;
+    transition: color 0.3s ease;
+}
+
+#productCarousel {
+    margin-top: 20px;
+}
+
+.carousel-item img {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control-prev, .carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: 250px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.sustainability-news {
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #81c784;
+}
+
+.sustainability-news h2 {
+    color: #33691e;
+    margin-bottom: 15px;
+}
+
+.sustainability-news article {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.sustainability-news h3 {
+    color: #2e7d32;
+}
+
+.sustainability-news p {
+    color: #666;
+}
+
+.sustainability-news .btn-secondary {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.sustainability-news .btn-secondary:hover {
+    background-color: #388e3c;
+    text-decoration: none;
+}
+
+.product-categories {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-categories h2 {
+    color: #2e7d32;
+    margin-bottom: 30px;
+}
+
+.product-categories .row {
+    justify-content: center;
+}
+
+.product-categories .col a {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: green;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 25px;
+    transition: transform 0.3s ease, background-color 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.product-categories .col a:hover {
+    background-color: #c8e6c9;
+    transform: translateY(-5px);
+    text-decoration: none;
+}
+
+
+.search-form .input-group {
+    border-radius: 20px; 
+}
+
+.search-form .form-control {
+    border: none;
+    border-radius: 20px; 
+}
+
+.search-form .input-group-append .btn {
+    border: none; 
+    border-radius: 0 20px 20px 0;
+}
+
+.search-button, .btn-outline-secondary {
+    color: black;
+    background-color: white;
+}
+
+.form-control {
+    margin-left: 130px;
+}
+
+hr{
+    background-color: black;
+    height: 0.05px;
+    opacity: 0.3;
+}
+
+footer {
+    color: black;
+    padding: 20px;
+    background-color: #e8f5e9;
+}
+
+.social-icon {
+    margin-right: 10px;
+}
+
+.social-icon img {
+    height: 25px;
+    width: 25px;
+}
+
+h1, h2, h3, p {
+    color: var(--earth-dark);
+    text-align: center;
+}
+
+
+.item-title {
+    flex-grow: 1; /* Allows the item title to expand and fill the space */
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-primary, .btn-danger {
+    margin: 0 5px; /* Adds spacing between buttons */
+}
+
+form.d-inline {
+    display: inline-block; /* Makes the form inline with the edit button */
+}
+
+.offer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.offer-card {
+    width: calc(33.33% - 20px); /* Adjust width as needed */
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+.offer-header {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.offer-title {
+    margin: 0;
+}
+
+.offer-status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #2e7d32;
+    color: #fff;
+}
+
+.offer-details {
+    padding: 15px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers for <%= item.title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/new.css">
+    <link rel="stylesheet" href="/css/offers.css">
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <br>
+    <h1>Offers for <%= item.title %></h1>
+    <div class="container">
+        <% if (messages.error) { %>
+            <div class="alert alert-danger"><%= messages.error %></div>
+        <% } %>
+        <% if (messages.success) { %>
+            <div class="alert alert-success"><%= messages.success %></div>
+        <% } %>
+        <% if (offers && offers.length > 0) { %>
+            <div class="row">
+                <% offers.forEach(function(offer) { %>
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Offer for <%= item.title %></h5>
+                                <div class="solid-line"></div>
+                                <p class="card-text">
+                                    <strong>Amount:</strong> $<%= offer.amount.toFixed(2) %><br>
+                                    <strong>Status:</strong> <%= offer.status %><br>
+                                    <strong>Buyer:</strong> <%= offer.user.firstName %> <%= offer.user.lastName %>
+                                </p>
+                                <% if (item.active && offer.status === 'pending') { %>
+                                    <form action="/items/<%= item._id %>/offers/accept/<%= offer._id %>" method="POST">
+                                        <button type="submit" class="btn btn-primary">Accept Offer</button>
+                                    </form>
+                                    
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        <% } else { %>
+            <p>No offers have been received for this item yet.</p>
+        <% } %>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

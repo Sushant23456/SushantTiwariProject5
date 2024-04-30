@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/new.css">
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="login-container">
+                    <% if (messages.error) { %>
+                        <div class="alert alert-danger"><%= messages.error %></div>
+                    <% } %>
+                    <% if (messages.success) { %>
+                        <div class="alert alert-success"><%= messages.success %></div>
+                    <% } %>
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">Login</h2>
+                            <form action="/users/login" method="POST">
+                                <div class="form-group-login">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control-login" id="email" name="email" required>
+                                </div>
+                                <br>
+                                <div class="form-group-login">
+                                    <label for="password">Password:</label>
+                                    <input type="password" class="form-control-login" id="password" name="password" required>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <p class="mt-4 text-center">Don't have an account? <a href="/users/new">Sign up here!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<br> <br>
+    <%- include('../partials/footer') %>
+</body>
+</html>

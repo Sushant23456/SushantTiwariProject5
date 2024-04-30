@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+    <div class="container mt-5">
+        <% if (messages.error) { %>
+            <div class="alert alert-danger"><%= messages.error %></div>
+        <% } %>
+        <% if (messages.success) { %>
+            <div class="alert alert-success"><%= messages.success %></div>
+        <% } %>
+        <h2>Welcome Back, <%= user.firstName %>!</h2>
+        <h3>Items Listed by You</h3>
+        <div class="list-group mt-4">
+            <% if (items && items.length > 0) { %>
+                <% items.forEach(function(item) { %>
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="item-title">
+                            <a href="/items/<%= item._id %>"><%= item.title %></a>
+                            <% if (item.active) { %>
+                                <span class="badge badge-success">Active</span>
+                            <% } else { %>
+                                <span class="badge badge-secondary">Inactive</span>
+                            <% } %>
+                        </span>
+                        <div>
+                            <a href="/item/edit/<%= item._id %>" class="btn btn-primary">Edit</a>
+                            <form action="/item/delete/<%= item._id %>?_method=DELETE" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                            <% if (item.offers && item.offers.length > 0) { %>
+                                <a href="/items/<%= item._id %>/offers" class="btn btn-primary">View Offers</a>
+                            <% } else { %>
+                                <button type="button" class="btn btn-primary" disabled>No Offers</button>
+                            <% } %>
+                        </div>
+                    </div>
+                    <br>
+                <% }); %>
+            <% } else { %>
+                <p class="text-center">You have not listed any items yet.</p>
+            <% } %>
+        </div>
+        <div class="solid-line"></div>
+        <h3>Your Offers:</h3>
+<div class="offer-container">
+    <% if (offers && offers.length > 0) { %>
+        <% offers.forEach(function(offer) { %>
+            <div class="offer-card">
+                <div class="offer-header">
+                    <% if (offer.item) { %>
+                        <h5 class="offer-title">$<%= offer.amount.toFixed(2) %> on <%= offer.item.title %></h5>
+                        <span class="offer-status"><%= offer.status %></span>
+                    <% } else { %>
+                        <h5 class="offer-title">Item no longer available</h5>
+                    <% } %>
+                </div>
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>You have not made any offers yet.</p>
+    <% } %>
+</div>
+
+        <br>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

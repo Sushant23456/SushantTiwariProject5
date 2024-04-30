@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/new.css">
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Register</h2>
+                        <% if (messages.error) { %>
+                            <div class="alert alert-danger"><%= messages.error %></div>
+                        <% } %>
+                        <% if (messages.success) { %>
+                            <div class="alert alert-success"><%= messages.success %></div>
+                        <% } %>
+                        <form action="/users/new" method="POST">
+                            <div class="form-group-register">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" class="form-control-register" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group-register">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" class="form-control-register" id="lastName" name="lastName" required>
+                            </div>
+                            <div class="form-group-register">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control-register" id="email" name="email" required>
+                            </div>
+                            <div class="form-group-register">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control-register" id="password" name="password" required>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>
