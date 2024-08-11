@@ -22,7 +22,7 @@ mongoose.connect(dbUrl)
 
         app.use(session({
             secret: 'mynameissaverylongsecret99988136612',
-            resave: true,
+            resave: false,
             saveUninitialized: false,
             store: MongoStore.create({
                 mongoUrl: dbUrl,
@@ -30,6 +30,7 @@ mongoose.connect(dbUrl)
             }),
             cookie: {
                 httpOnly: true,
+                secure: true,
                 maxAge: 60 * 60 * 1000
             }
         }));
